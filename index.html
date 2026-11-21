@@ -447,6 +447,39 @@ footer{padding-block:44px;border-top:1px solid var(--line)}
   .rv{opacity:1;transform:none}
   .hero h1 .ln>span{transform:none}
 }
+
+/* manifesto band + service ticker */
+.band{border-block:1px solid var(--line);padding:clamp(48px,7vw,96px) 0 0;overflow:hidden}
+.band-l{font-family:var(--display);font-weight:600;letter-spacing:-.035em;line-height:1.08;font-size:clamp(30px,4.6vw,68px);margin:0 0 clamp(40px,5vw,64px)}
+.band-l span{display:block}
+.band-l em{color:var(--lime)}
+.ticker{border-top:1px solid var(--line);padding:18px 0;display:flex;overflow:hidden;direction:ltr}
+.ticker-t{display:flex;flex:none;gap:0;animation:tick 48s linear infinite}
+.ticker-t span{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap;padding:0 22px;display:flex;align-items:center;gap:44px}
+.ticker-t span::after{content:"";width:6px;height:6px;background:var(--lime);transform:rotate(45deg)}
+[dir="rtl"] .ticker-t span{font-family:var(--sans);letter-spacing:0;text-transform:none;font-size:15px}
+.ticker:hover .ticker-t{animation-play-state:paused}
+@keyframes tick{to{transform:translateX(-100%)}}
+/* service verbs */
+.svc-verb{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--lime)}
+[dir="rtl"] .svc-verb{font-family:var(--sans);letter-spacing:0;text-transform:none;font-size:14px;font-weight:600}
+/* featured case: gallery + stats */
+.cs-gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(110px,13vw,190px);gap:8px;margin:0}
+.cs-gal:not(:has(figure)){display:none}
+.cs-gal figure{margin:0;overflow:hidden;border-radius:4px;background:var(--bg);position:relative}
+.cs-gal figure.w{grid-column:span 2;grid-row:span 2}
+.cs-gal figure.t{grid-row:span 2}
+.cs-gal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--ease),filter .6s;filter:saturate(.92)}
+.cs-gal figure:hover img{transform:scale(1.04);filter:saturate(1.05)}
+.cs-cap{color:var(--muted);margin:-10px 0 0}
+.cs-gal:not(:has(figure))+.cs-cap{display:none}
+.cs-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.cs-stats div{background:var(--bg);padding:22px 20px;display:flex;flex-direction:column;gap:8px}
+.cs-stats b{font-family:var(--display);font-weight:600;font-size:clamp(30px,3.6vw,50px);letter-spacing:-.04em;line-height:1;color:var(--lime);direction:ltr;text-align:start}
+.cs-stats span{color:var(--ink);font-size:14.5px;line-height:1.45}
+.cs-src{color:var(--muted);margin:-8px 0 0;font-size:11px}
+@media (max-width:900px){.cs-stats{grid-template-columns:repeat(2,1fr)}.cs-stats b{font-size:28px}.cs-gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}}
+@media (prefers-reduced-motion:reduce){.ticker-t{animation:none}}
 /* print / PDF export: show everything, no blank pages */
 @media print{
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -536,9 +569,14 @@ footer{padding-block:44px;border-top:1px solid var(--line)}
     </div>
     <div class="hero-foot">
       <span class="tag" data-i18n="tagline">Every move, measured.</span>
-      <span class="mono" data-i18n="hero.svc">Strategy · Brand · Media · Content · Web · Conversion</span>
+      <span class="mono" data-i18n="hero.svc">Strategy · Brand · Ads · Creative · Social · Web · Data</span>
     </div>
   </div>
+</section>
+
+<section class="band" aria-label="TAKTINO manifesto" data-i18n-aria="band.aria">
+  <div class="wrap"><p class="band-l rv" data-i18n="band.l"><span>We don't post. <em>We play.</em></span><span>We don't guess. <em>We measure.</em></span><span>We don't chase reach. <em>We take ground.</em></span></p></div>
+  <div class="ticker" aria-hidden="true"><div class="ticker-t" id="tickA"></div><div class="ticker-t" id="tickB"></div></div>
 </section>
 
 <!-- 01 DIAGNOSTIC -->
@@ -643,7 +681,7 @@ footer{padding-block:44px;border-top:1px solid var(--line)}
       <p class="sec-idx mono"><b>04</b> / <span data-i18n="svc.idx">Services</span></p>
       <div>
         <h2 id="svc-title" class="rv" data-i18n="svc.title">Six pieces. <em>One strategy.</em></h2>
-        <p class="lede rv d1" data-i18n="svc.lede">Everything a brand needs, from the first name to the thousandth sale — organised as six pieces that play as one strategy. Open one to see what's included.</p>
+        <p class="lede rv d1" data-i18n="svc.lede">From the first name to the thousandth order — strategy, ads, creative, social, websites and data, played as one game by one team. Open a piece to see exactly what you get.</p>
       </div>
     </div>
     <div class="svc" id="svcList"></div>
@@ -657,7 +695,7 @@ footer{padding-block:44px;border-top:1px solid var(--line)}
       <p class="sec-idx mono"><b>05</b> / <span data-i18n="proof.idx">Proof</span></p>
       <div>
         <h2 id="proof-title" class="rv" data-i18n="proof.title">Proof, <em>not promises.</em></h2>
-        <p class="lede rv d1" data-i18n="proof.lede">Real client work first — the problem, the moves we made and what we built — then demonstrations of how we think. Every item is labelled for exactly what it is.</p>
+        <p class="lede rv d1" data-i18n="proof.lede">Real brands, real moves, real numbers — each one with its source. Then demonstrations of how we think, labelled for exactly what they are.</p>
       </div>
     </div>
     <div class="tabs" role="tablist" aria-label="Types of proof" data-i18n-aria="proof.aria">
@@ -841,30 +879,35 @@ const CHALLENGES = [
 ];
 
 const SERVICES = [
-  {piece:"bishop", en:{r:"The Bishop — sees the whole board before the first move.", d:"Everything that decides where a brand plays and how it is remembered: research, positioning, naming and identity.", b:"Best when you're launching a brand, entering a new market, or your brand no longer fits your business.", i:["Market & competitor research","Positioning & messaging","Brand naming","Brand identity & visual design","Rebranding","Marketing strategy & go-to-market plans"]},
-   ar:{r:"الفيل — يرى الرقعة كاملة قبل النقلة الأولى.", d:"كل ما يحدد أين تنافس العلامة وكيف تُتذكَّر: البحث، والتموضع، والتسمية، والهوية.", b:"الأنسب عندما تطلق علامة جديدة، أو تدخل سوقًا جديدًا، أو لم تعد علامتك تعبّر عن عملك.", i:["بحث السوق والمنافسين","التموضع والرسائل","اختيار اسم العلامة","الهوية البصرية والتصميم","إعادة بناء العلامة (Rebranding)","الاستراتيجية التسويقية وخطط دخول السوق"]}},
-  {piece:"queen", en:{r:"The Queen — the most versatile piece on the board.", d:"Paid campaigns built around revenue, not reach — planned, bought, tested and optimised across every major platform.", b:"Best when your ads need to pay back, not just be seen.", i:["Performance strategy & funnel planning","Media buying: Meta, Google, TikTok, Snapchat, LinkedIn, X","Search & shopping ads","Retargeting & remarketing","Budget allocation & testing roadmaps"]},
-   ar:{r:"الوزير — أكثر القطع مرونة على الرقعة.", d:"حملات مدفوعة مبنية حول الإيرادات لا الوصول — تخطيط وشراء واختبار وتحسين عبر كل المنصات الكبرى.", b:"الأنسب عندما تحتاج إعلاناتك إلى تحقيق عائد، لا مجرد مشاهدات.", i:["استراتيجية الأداء وتخطيط مسار التحويل","شراء الإعلانات: ميتا وجوجل وتيك توك وسناب شات ولينكدإن وإكس","إعلانات البحث والتسوق","إعادة الاستهداف","توزيع الميزانية وخطط الاختبار"]}},
-  {piece:"knight", en:{r:"The Knight — the only piece that jumps.", d:"Ideas and assets that reach your customer from an angle competitors don't see — built to sell, not just to look good.", b:"Best when your ads and content look like everyone else's.", i:["Creative strategy & campaign concepts","Product & brand photography","Video production & Reels","Ad creative & design","Arabic & English copywriting"]},
-   ar:{r:"الحصان — القطعة الوحيدة التي تقفز.", d:"أفكار ومواد تصل إلى عميلك من زاوية لا يراها المنافسون — مصممة لتبيع، لا لتبدو جميلة فقط.", b:"الأنسب عندما تشبه إعلاناتك ومحتواك ما يقدمه الجميع.", i:["الاستراتيجية الإبداعية ومفاهيم الحملات","تصوير المنتجات والعلامة","إنتاج الفيديو والـ Reels","تصميم الإعلانات","كتابة المحتوى بالعربية والإنجليزية"]}},
-  {piece:"pawn", en:{r:"The Pawn — small moves that add up. Reach the end, and it becomes a queen.", d:"A consistent, purposeful presence on every platform your customers use — where every post has a job to do.", b:"Best when you post consistently but it doesn't turn into business.", i:["Social media management: Instagram, Facebook, TikTok, LinkedIn, X","Content strategy & monthly calendars","Community management","Influencer marketing","Social reporting"]},
-   ar:{r:"العسكري — نقلات صغيرة تتراكم، وإذا بلغ النهاية صار وزيرًا.", d:"حضور منتظم وهادف على كل منصة يستخدمها عملاؤك — لكل منشور مهمة يؤديها.", b:"الأنسب عندما تنشر باستمرار لكن ذلك لا يتحول إلى مبيعات.", i:["إدارة حسابات التواصل: إنستجرام وفيسبوك وتيك توك ولينكدإن وإكس","استراتيجية المحتوى والتقويم الشهري","إدارة المجتمع","التسويق عبر المؤثرين","تقارير الأداء"]}},
-  {piece:"rook", en:{r:"The Rook — builds the structure everything else stands on.", d:"Fast, bilingual websites and online stores designed to convert — the home base for all your marketing.", b:"Best when you need a website or a store — or your current one doesn't sell.", i:["Website design & development","E-commerce stores (custom, Shopify or WooCommerce)","Landing pages","Search engine optimisation (SEO)","Speed, hosting setup & maintenance"]},
-   ar:{r:"الطابية — تبني الهيكل الذي يقوم عليه كل شيء.", d:"مواقع ومتاجر إلكترونية سريعة وثنائية اللغة، مصممة لتحوّل الزائر إلى عميل — القاعدة التي ينطلق منها تسويقك كله.", b:"الأنسب عندما تحتاج إلى موقع أو متجر — أو عندما لا يبيع موقعك الحالي.", i:["تصميم المواقع وتطويرها","المتاجر الإلكترونية (برمجة خاصة أو Shopify أو WooCommerce)","صفحات الهبوط","تحسين الظهور في محركات البحث (SEO)","السرعة وإعداد الاستضافة والصيانة"]}},
-  {piece:"king", en:{r:"The King — the whole game is played to protect it.", d:"Measuring what matters, removing friction before the sale, and bringing customers back after it.", b:"Best when traffic arrives but doesn't buy — or buys once and never returns.", i:["Conversion rate optimisation & A/B testing","Analytics & tracking setup","Email & WhatsApp marketing","CRM & customer retention","Marketing audits & consulting"]},
-   ar:{r:"الملك — اللعبة كلها تدور حول حمايته.", d:"قياس ما يهم، وإزالة العوائق قبل الشراء، وإعادة العملاء بعده.", b:"الأنسب عندما تصل الزيارات ولا تشتري — أو تشتري مرة ولا تعود.", i:["تحسين معدل التحويل واختبارات A/B","إعداد التحليلات والتتبّع","التسويق عبر البريد الإلكتروني وواتساب","إدارة علاقات العملاء والاحتفاظ بهم","تدقيق التسويق والاستشارات"]}}
+  {piece:"bishop", en:{v:"We read the board.", r:"The Bishop — sees the whole board before the first move.", d:"Everything that decides where a brand plays and how it is remembered: research, positioning, naming and identity.", b:"Best when you're launching a brand, entering a new market, or your brand no longer fits your business.", i:["Market & competitor research","Positioning & messaging","Brand naming","Brand identity & visual design","Rebranding","Marketing strategy & go-to-market plans"]},
+   ar:{v:"نقرأ الرقعة.", r:"الفيل — يرى الرقعة كاملة قبل النقلة الأولى.", d:"كل ما يحدد أين تنافس العلامة وكيف تُتذكَّر: البحث، والتموضع، والتسمية، والهوية.", b:"الأنسب عندما تطلق علامة جديدة، أو تدخل سوقًا جديدًا، أو لم تعد علامتك تعبّر عن عملك.", i:["بحث السوق والمنافسين","التموضع والرسائل","اختيار اسم العلامة","الهوية البصرية والتصميم","إعادة بناء العلامة (Rebranding)","الاستراتيجية التسويقية وخطط دخول السوق"]}},
+  {piece:"queen", en:{v:"We attack where it pays.", r:"The Queen — the most versatile piece on the board.", d:"Paid campaigns built around revenue, not reach — planned, bought, tested and optimised across every major platform.", b:"Best when your ads need to pay back, not just be seen.", i:["Performance strategy & funnel planning","Media buying: Meta, Google, TikTok, Snapchat, LinkedIn, X","Google Ads: Search, Shopping & Performance Max","Retargeting & remarketing","Budget allocation & testing roadmaps"]},
+   ar:{v:"نهاجم حيث العائد.", r:"الوزير — أكثر القطع مرونة على الرقعة.", d:"حملات مدفوعة مبنية حول الإيرادات لا الوصول — تخطيط وشراء واختبار وتحسين عبر كل المنصات الكبرى.", b:"الأنسب عندما تحتاج إعلاناتك إلى تحقيق عائد، لا مجرد مشاهدات.", i:["استراتيجية الأداء وتخطيط مسار التحويل","شراء الإعلانات: ميتا وجوجل وتيك توك وسناب شات ولينكدإن وإكس","إعلانات جوجل: البحث والتسوق وPerformance Max","إعادة الاستهداف","توزيع الميزانية وخطط الاختبار"]}},
+  {piece:"knight", en:{v:"We stop the scroll.", r:"The Knight — the only piece that jumps.", d:"Ideas and assets that reach your customer from an angle competitors don't see — built to sell, not just to look good.", b:"Best when your ads and content look like everyone else's.", i:["Creative strategy & campaign concepts","Product & brand photography","Video production & Reels","UGC & creator content","Ad creative, motion & design","Arabic & English copywriting"]},
+   ar:{v:"نوقف التمرير.", r:"الحصان — القطعة الوحيدة التي تقفز.", d:"أفكار ومواد تصل إلى عميلك من زاوية لا يراها المنافسون — مصممة لتبيع، لا لتبدو جميلة فقط.", b:"الأنسب عندما تشبه إعلاناتك ومحتواك ما يقدمه الجميع.", i:["الاستراتيجية الإبداعية ومفاهيم الحملات","تصوير المنتجات والعلامة","إنتاج الفيديو والـ Reels","محتوى صنّاع المحتوى (UGC)","تصميم الإعلانات والموشن جرافيك","كتابة المحتوى بالعربية والإنجليزية"]}},
+  {piece:"pawn", en:{v:"We show up — with purpose.", r:"The Pawn — small moves that add up. Reach the end, and it becomes a queen.", d:"A consistent, purposeful presence on every platform your customers use — where every post has a job to do.", b:"Best when you post consistently but it doesn't turn into business.", i:["Social media management: Instagram, Facebook, TikTok, LinkedIn, X","Content strategy & monthly calendars","Community management","Contests & giveaways","Influencer marketing","Social reporting"]},
+   ar:{v:"نحضر — بهدف.", r:"العسكري — نقلات صغيرة تتراكم، وإذا بلغ النهاية صار وزيرًا.", d:"حضور منتظم وهادف على كل منصة يستخدمها عملاؤك — لكل منشور مهمة يؤديها.", b:"الأنسب عندما تنشر باستمرار لكن ذلك لا يتحول إلى مبيعات.", i:["إدارة حسابات التواصل: إنستجرام وفيسبوك وتيك توك ولينكدإن وإكس","استراتيجية المحتوى والتقويم الشهري","إدارة المجتمع","المسابقات والجوائز","التسويق عبر المؤثرين","تقارير الأداء"]}},
+  {piece:"rook", en:{v:"We build the base.", r:"The Rook — builds the structure everything else stands on.", d:"Fast, bilingual websites and online stores designed to convert — the home base for all your marketing.", b:"Best when you need a website or a store — or your current one doesn't sell.", i:["Website design & development","E-commerce stores: Shopify, WooCommerce, Odoo or custom","Arabic & English (RTL) websites","Landing pages","Search engine optimisation (SEO)","Speed, hosting setup & maintenance"]},
+   ar:{v:"نبني القاعدة.", r:"الطابية — تبني الهيكل الذي يقوم عليه كل شيء.", d:"مواقع ومتاجر إلكترونية سريعة وثنائية اللغة، مصممة لتحوّل الزائر إلى عميل — القاعدة التي ينطلق منها تسويقك كله.", b:"الأنسب عندما تحتاج إلى موقع أو متجر — أو عندما لا يبيع موقعك الحالي.", i:["تصميم المواقع وتطويرها","المتاجر الإلكترونية: Shopify أو WooCommerce أو Odoo أو برمجة خاصة","مواقع بالعربية والإنجليزية","صفحات الهبوط","تحسين الظهور في محركات البحث (SEO)","السرعة وإعداد الاستضافة والصيانة"]}},
+  {piece:"king", en:{v:"We measure every move.", r:"The King — the whole game is played to protect it.", d:"Measuring what matters, removing friction before the sale, and bringing customers back after it.", b:"Best when traffic arrives but doesn't buy — or buys once and never returns.", i:["Conversion rate optimisation & A/B testing","Analytics & tracking: GA4, Meta Pixel & Conversions API","Email & WhatsApp marketing","CRM & customer retention","Marketing audits & consulting"]},
+   ar:{v:"نقيس كل نقلة.", r:"الملك — اللعبة كلها تدور حول حمايته.", d:"قياس ما يهم، وإزالة العوائق قبل الشراء، وإعادة العملاء بعده.", b:"الأنسب عندما تصل الزيارات ولا تشتري — أو تشتري مرة ولا تعود.", i:["تحسين معدل التحويل واختبارات A/B","التحليلات والتتبّع: GA4 وMeta Pixel وConversions API","التسويق عبر البريد الإلكتروني وواتساب","إدارة علاقات العملاء والاحتفاظ بهم","تدقيق التسويق والاستشارات"]}}
 ];
 
 const CASES = [
   {url:"https://www.jasminehousejewelry.com", piece:"queen",
-   en:{name:"Jasmine House Jewelry", sector:"Fine-jewelry e-commerce · UAE", scope:["Brand naming","Market selection","Brand identity","E-commerce website","Photography & video","Content & social media"],
-       ch:"Turn an idea into a fine-jewelry brand that could sell gold and diamond pieces online in the UAE — a category where customers need a lot of trust before they buy.",
-       mv:["Chose the brand name and the target market","Built the full identity and visual language","Designed and built the e-commerce store","Produced the product photography and video","Ran bilingual storytelling content around every collection — from zodiac necklaces to culture-inspired pieces"],
-       out:"Jasmine House went from a name on paper to a live e-commerce brand selling gold and diamond jewelry in the UAE — with one consistent brand across its store, content and social channels."},
-   ar:{name:"جاسمين هاوس للمجوهرات", sector:"متجر إلكتروني للمجوهرات الفاخرة · الإمارات", scope:["اختيار اسم العلامة","اختيار السوق","الهوية البصرية","المتجر الإلكتروني","التصوير والفيديو","المحتوى والتواصل الاجتماعي"],
-       ch:"تحويل فكرة إلى علامة مجوهرات فاخرة قادرة على بيع قطع الذهب والألماس أونلاين في الإمارات — في فئة يحتاج فيها العميل إلى ثقة كبيرة قبل الشراء.",
-       mv:["اختيار اسم العلامة والسوق المستهدف","بناء الهوية الكاملة واللغة البصرية","تصميم المتجر الإلكتروني وتطويره","إنتاج صور المنتجات والفيديو","محتوى قصصي بالعربية والإنجليزية حول كل مجموعة — من قلادات الأبراج إلى القطع المستوحاة من الحضارات"],
-       out:"انتقلت جاسمين هاوس من اسم على الورق إلى علامة تجارية إلكترونية قائمة تبيع مجوهرات الذهب والألماس في الإمارات — بهوية واحدة متسقة عبر المتجر والمحتوى وقنوات التواصل."}},
+   imgs:[["jh-01","w","A model wearing Jasmine House gold rings and earrings","عارضة ترتدي خواتم وأقراط جاسمين هاوس الذهبية"],["jh-02","t","Editorial portrait in a garden, wearing a gold necklace and rings","بورتريه في حديقة بقلادة وخواتم ذهبية"],["jh-03","","Spiral gold ring on a turquoise stage — Modern Masterpiece","خاتم ذهبي حلزوني على منصة فيروزية"],["jh-05","","The Dana pearl earrings","أقراط دانة باللؤلؤ"],["jh-04","t","Gold bracelets and necklace in natural light","أساور وقلادة ذهبية في ضوء طبيعي"],["jh-06","t","Close-up portrait with gold rings","بورتريه قريب بخواتم ذهبية"],["jh-07","t","The zodiac collection laid out in a circle","مجموعة الأبراج مرتّبة في دائرة"],["jh-08","t","Portrait in a white shirt with layered gold pieces","بورتريه بقميص أبيض وقطع ذهبية متعددة"]],
+   en:{name:"Jasmine House Jewelry", sector:"Fine-jewelry e-commerce · UAE", scope:["Naming","Market selection","Brand identity","E-commerce","Art direction & photography","Video","Content, contests & social"],
+       stats:[["26K+","people found the store in its first year online"],["4","markets with real demand — UAE, KSA, Iraq, Egypt"],["AED 2.9K","average order value"],["3","countries the pieces reached — UAE, Egypt, Oman"]],
+       src:"Google Analytics & store records · Jun 2023 – Jun 2024",
+       ch:"A name, an idea — and a category where nobody buys gold from a stranger. The job: make a brand-new jewelry house feel trusted enough to sell 21K gold online, across borders.",
+       mv:["Named the brand and chose the battlefield: the UAE first","Built the identity — mark, palette, type and visual language","Designed and launched a bilingual e-commerce store","Art-directed every shoot: concept, casting, styling, photography and video","Ran the content engine — collections, contests and stories, from zodiac pieces to culture-inspired lines"],
+       out:"From a name on paper to a live jewelry house: 26K+ people found it within a year, orders arrived from three countries, and the average basket landed near AED 2,900."},
+   ar:{name:"جاسمين هاوس للمجوهرات", sector:"متجر إلكتروني للمجوهرات الفاخرة · الإمارات", scope:["اختيار الاسم","اختيار السوق","الهوية البصرية","المتجر الإلكتروني","الإخراج الفني والتصوير","الفيديو","المحتوى والمسابقات والسوشيال"],
+       stats:[["+26K","شخص وصلوا للمتجر في سنته الأولى أونلاين"],["4","أسواق بطلب حقيقي — الإمارات والسعودية والعراق ومصر"],["2.9K AED","متوسط قيمة الطلب"],["3","دول وصلتها القطع — الإمارات ومصر وعُمان"]],
+       src:"Google Analytics وسجلات المتجر · يونيو 2023 – يونيو 2024",
+       ch:"اسم وفكرة — في فئة لا يشتري فيها أحد الذهب من غريب. المهمة: أن تبدو دار مجوهرات جديدة تمامًا جديرة بالثقة لتبيع ذهب عيار 21 أونلاين، وعبر الحدود.",
+       mv:["اختيار اسم العلامة وأرض المعركة: الإمارات أولًا","بناء الهوية — الشعار والألوان والخطوط واللغة البصرية","تصميم متجر إلكتروني بلغتين وإطلاقه","الإخراج الفني لكل جلسة تصوير: الفكرة واختيار الموديل والتنسيق والتصوير والفيديو","إدارة ماكينة المحتوى — المجموعات والمسابقات والقصص، من قطع الأبراج إلى المجموعات المستوحاة من الحضارات"],
+       out:"من اسم على الورق إلى دار مجوهرات قائمة: أكثر من 26 ألف شخص وصلوا إليها خلال عام، ووصلت الطلبات من ثلاث دول، واستقر متوسط قيمة الطلب قرب 2,900 درهم."}},
   {url:"https://www.wafaalhosany-lawfirm.com", piece:"bishop",
    en:{name:"Wafa Ali Alhosany Advocates & Legal Consultants", sector:"Law firm · Dubai, UAE", scope:["Rebranding","Website","LinkedIn","X","Facebook","Content strategy"],
        ch:"A law firm in a field built on trust needed a brand and a digital presence that matched the seriousness of its work — and spoke clearly to individuals and businesses in the UAE.",
@@ -935,7 +978,7 @@ const UI = {
       msgHi:"Hello TAKTINO — I'd like a business diagnosis.", mName:"Name", mCo:"Company / brand", mWeb:"Website / Instagram", mCh:"Main challenge", mContact:"Contact", mMore:"Details",
       waDefault:"Hello TAKTINO, I'd like to talk about growing my business.", waChal:"Hello TAKTINO — our main challenge is: ", waChal2:". I'd like to discuss a professional audit.",
       subject:"Diagnosis request from the TAKTINO website", emailPh:"[Add official email]", waPh:"[Add WhatsApp number]",
-      cLabel:"Client project", cChallenge:"The challenge", cMoves:"Our moves", cOutcome:"The outcome", cVisit:"Visit the website", clientTitle:"Verified case studies — in preparation", clientBody:"We publish client work only with written approval. Each case study will show the business problem, the move we made and the measured result — nothing more, nothing less.",
+      cLabel:"Client project", cGal:"Selected frames · concept, casting, shoot & design by TAKTINO", cSrc:"Source", ticker:["Brand strategy","Naming & identity","Meta ads","Google Ads","TikTok & Snapchat ads","Content & social media","Photography & video","UGC & creators","Websites","E-commerce stores","SEO","Analytics & tracking","Email & WhatsApp marketing","Conversion optimisation"], cChallenge:"The challenge", cMoves:"Our moves", cOutcome:"The outcome", cVisit:"Visit the website", clientTitle:"Verified case studies — in preparation", clientBody:"We publish client work only with written approval. Each case study will show the business problem, the move we made and the measured result — nothing more, nothing less.",
       template:"Case study template", tProblem:"The problem", tMove:"The move", tResult:"The measured result", phProblem:"[Business problem]", phMove:"[Strategic decision]", phResult:"[Verified result — published with client approval]", phClient:"[Client name]", phInd:"[Industry]",
       demoNote:"Demonstration projects use fictional brands to show how we think. They are not client work, and no results are claimed.",
       demoLabel:"Demonstration · fictional", dScenario:"Scenario", dMoves:"Moves we'd make", dResults:"Results", dNA:"None claimed — this demonstrates method, not performance.",
@@ -957,7 +1000,7 @@ const UI = {
       msgHi:"مرحبًا تاكتينو — أرغب في تشخيص لعملي.", mName:"الاسم", mCo:"الشركة / العلامة", mWeb:"الموقع / إنستجرام", mCh:"التحدي الرئيسي", mContact:"وسيلة التواصل", mMore:"تفاصيل",
       waDefault:"مرحبًا تاكتينو، أود التحدث عن تنمية عملي.", waChal:"مرحبًا تاكتينو — التحدي الرئيسي لدينا: ", waChal2:". أود مناقشة تدقيق احترافي.",
       subject:"طلب تشخيص من موقع تاكتينو", emailPh:"[أضف البريد الرسمي]", waPh:"[أضف رقم واتساب]",
-      cLabel:"مشروع عميل", cChallenge:"التحدي", cMoves:"نقلاتنا", cOutcome:"النتيجة", cVisit:"زيارة الموقع", clientTitle:"دراسات حالة موثّقة — قيد الإعداد", clientBody:"لا ننشر أعمال العملاء إلا بموافقة مكتوبة. ستعرض كل دراسة حالة مشكلة العمل، والنقلة التي اتخذناها، والنتيجة المقاسة — لا أكثر ولا أقل.",
+      cLabel:"مشروع عميل", cGal:"لقطات مختارة · الفكرة واختيار الموديل والتصوير والتصميم من TAKTINO", cSrc:"المصدر", ticker:["استراتيجية العلامة","الاسم والهوية","إعلانات ميتا","إعلانات جوجل","إعلانات تيك توك وسناب شات","المحتوى والسوشيال ميديا","التصوير والفيديو","محتوى صنّاع المحتوى UGC","المواقع الإلكترونية","المتاجر الإلكترونية","SEO","التحليلات والتتبّع","التسويق بالبريد وواتساب","تحسين معدل التحويل"], cChallenge:"التحدي", cMoves:"نقلاتنا", cOutcome:"النتيجة", cVisit:"زيارة الموقع", clientTitle:"دراسات حالة موثّقة — قيد الإعداد", clientBody:"لا ننشر أعمال العملاء إلا بموافقة مكتوبة. ستعرض كل دراسة حالة مشكلة العمل، والنقلة التي اتخذناها، والنتيجة المقاسة — لا أكثر ولا أقل.",
       template:"نموذج دراسة الحالة", tProblem:"المشكلة", tMove:"النقلة", tResult:"النتيجة المقاسة", phProblem:"[مشكلة العمل]", phMove:"[القرار الاستراتيجي]", phResult:"[نتيجة موثّقة — تُنشر بموافقة العميل]", phClient:"[اسم العميل]", phInd:"[القطاع]",
       demoNote:"مشاريع العرض تستخدم علامات خيالية لتوضيح طريقة تفكيرنا. ليست أعمالًا لعملاء، ولا ندّعي فيها أي نتائج.",
       demoLabel:"مشروع عرض · خيالي", dScenario:"السيناريو", dMoves:"النقلات التي سنتخذها", dResults:"النتائج", dNA:"لا ندّعي أي نتائج — المشروع يوضح المنهج لا الأداء.",
@@ -975,7 +1018,7 @@ const AR = {
   "hero.sub":"<strong>تاكتينو وكالة تسويق بالأداء ونمو إبداعي للعلامات الطموحة في مصر والشرق الأوسط.</strong> نحدد أين يتعطّل نموّك، ثم نخطط النقلات التي تحرّره وننفذها ونقيس أثرها.",
   "hero.cta1":"ابدأ تشخيص عملك","hero.cta2":"تعرّف على منهجنا",
   "pick.k":"النقلة التالية","pick.k2":"فحص في دقيقة","pick.q":"أيّ هذه التحديات يشبه وضع عملك؟",
-  "tagline":"كل نقلة، محسوبة.","hero.svc":"استراتيجية · علامة تجارية · إعلانات · محتوى · مواقع · تحويل",
+  "tagline":"كل نقلة، محسوبة.","hero.svc":"استراتيجية · علامة · إعلانات · إبداع · سوشيال · مواقع · بيانات",
   "diag.idx":"النقلة التالية","diag.title":"اختر تحديك. <em>واعرف من أين سنبدأ.</em>",
   "diag.lede":"اختر المشكلة الأقرب إلى وضعك. سيتحرك الحصان إليها، وستحصل على مؤشر أولي: ما الذي يسببها عادةً، وأي الأرقام يجب فحصها، وما النقلة الأولى التي قد نبدأ بها.",
   "board.label":"الرقعة","board.aria":"رقعة شطرنج: كل مربع مرقّم يمثل تحديًا تجاريًا","board.legend":"اضغط على مربع مرقّم، أو اختر من القائمة.",
@@ -994,8 +1037,8 @@ const AR = {
   "app.s2t":"الاستراتيجية","app.s2d":"نختار النقلات القليلة ذات العائد المتوقع الأعلى، والقنوات المناسبة، والمؤشر الذي سيثبت نجاح كل نقلة.","app.s2g":"خطة نمو مرتّبة حسب الأولوية، وإطار واضح للقياس.","app.s2w":"كل بند في ميزانيتك له مهمة واضحة.",
   "app.s3t":"التنفيذ","app.s3d":"تنطلق الإعلانات والإبداع وتحسين التحويل كخطة لعب واحدة متناسقة — لا كمهام منفصلة تتنقل بين الفرق.","app.s3g":"حملات قيد التشغيل، ومواد إبداعية، وتحسينات على صفحات الهبوط.","app.s3w":"إعلاناتك ومحتواك وصفحاتك تدفع نحو الهدف نفسه.",
   "app.s4t":"القياس والتحسين","app.s4d":"نقرأ النتائج مقابل المؤشرات التي اتفقنا عليها، نوقف ما لا ينجح ونوسّع ما ينجح، ثم نخطط للنقلة التالية.","app.s4g":"تقارير جاهزة لاتخاذ القرار: ماذا حدث، ولماذا، وما الخطوة التالية.","app.s4w":"تعرف دائمًا ما الذي يقدمه التسويق لعملك.",
-  "svc.idx":"الخدمات","svc.title":"ست قطع. <em>استراتيجية واحدة.</em>","svc.lede":"كل ما تحتاجه العلامة، من اختيار الاسم حتى البيع — منظّم في ست قطع تلعب كاستراتيجية واحدة. افتح أي خدمة لترى ما تشمله.",
-  "proof.idx":"الأدلة","proof.title":"أدلة، <em>لا وعود.</em>","proof.lede":"أعمال حقيقية لعملائنا أولًا — المشكلة، والنقلات التي اتخذناها، وما بنيناه — ثم أمثلة توضّح طريقة تفكيرنا. وكل عنصر موصوف بما هو عليه بالضبط.","proof.aria":"أنواع الأدلة",
+  "band.l":"<span>لا ننشر لنملأ الصفحة. <em>نلعب لنكسب.</em></span><span>لا نخمّن. <em>نقيس.</em></span><span>لا نطارد المشاهدات. <em>نكسب الأرض.</em></span>","band.aria":"بيان TAKTINO","svc.idx":"الخدمات","svc.title":"ست قطع. <em>استراتيجية واحدة.</em>","svc.lede":"من اختيار الاسم حتى الطلب رقم ألف — الاستراتيجية والإعلانات والإبداع والسوشيال ميديا والمواقع والبيانات، يلعبها فريق واحد كلعبة واحدة. افتح أي قطعة لترى ما تحصل عليه بالضبط.",
+  "proof.idx":"الأدلة","proof.title":"أدلة، <em>لا وعود.</em>","proof.lede":"علامات حقيقية، ونقلات حقيقية، وأرقام حقيقية — كل رقم بمصدره. ثم أمثلة توضّح طريقة تفكيرنا، وكل عنصر موصوف بما هو عليه بالضبط.","proof.aria":"أنواع الأدلة",
   "proof.t1":"مشاريع العملاء","proof.k1":"عملاء حقيقيون","proof.t2":"مشاريع عرض","proof.k2":"توضيحية","proof.t3":"نموذج تدقيق","proof.k3":"إطار عمل",
   "ins.idx":"رؤيتنا","ins.lede":"سلسلة تحلل قرارات تسويقية حقيقية — اللامعة منها والمكلفة — وما يمكن لأي نشاط تجاري أن يتعلمه منها.",
   "why.idx":"لماذا تاكتينو","why.title":"لماذا تاكتينو، <em>وليس وكالة أكبر؟</em>","why.lede":"سؤال مشروع، وهذه إجابتنا الصريحة.",
@@ -1063,7 +1106,7 @@ function renderServices(){
       <button class="svc-btn" type="button" aria-expanded="${o}" aria-controls="${id}">
         <span class="svc-num mono">0${i+1}</span>
         <span class="piece" aria-hidden="true"><svg><use href="#p-${s.piece}"/></svg></span>
-        <span class="svc-title"><h3>${esc(SVC_NAMES[lang][i])}</h3><span class="svc-role">${esc(c.r)}</span></span>
+        <span class="svc-title"><span class="svc-verb">${esc(c.v)}</span><h3>${esc(SVC_NAMES[lang][i])}</h3><span class="svc-role">${esc(c.r)}</span></span>
         <span class="plus" aria-hidden="true"></span>
       </button>
       <div class="svc-panel" id="${id}"><div><div class="svc-body">
@@ -1075,12 +1118,15 @@ function renderServices(){
 }
 function renderProof(){
   const u = U();
+  const tk = u.ticker.map(x=>`<span>${esc(x)}</span>`).join(""); if($("#tickA")){ $("#tickA").innerHTML = tk; $("#tickB").innerHTML = tk; }
   $("#p-client").innerHTML = `<div class="cs-list">${CASES.map((c,i)=>{const t=c[lang]; return `
     <article class="cs">
       <div class="cs-head">
         <div><span class="label">${u.cLabel} · 0${i+1}</span><h3>${esc(t.name)}</h3><p class="sub">${esc(t.sector)}</p></div>
         <svg class="cs-piece" aria-hidden="true"><use href="#p-${c.piece}"/></svg>
       </div>
+      ${c.imgs?`<div class="cs-gal">${c.imgs.map(m=>`<figure class="${m[1]}"><img src="${m[0]}.webp" alt="${esc(lang==="ar"?m[3]:m[2])}" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure>`).join("")}</div><p class="mono cs-cap">${u.cGal}</p>`:""}
+      ${t.stats?`<div class="cs-stats">${t.stats.map(x=>`<div><b>${esc(x[0])}</b><span>${esc(x[1])}</span></div>`).join("")}</div><p class="mono cs-src">${u.cSrc}: ${esc(t.src)}</p>`:""}
       <div class="cs-tags">${t.scope.map(s=>`<span>${esc(s)}</span>`).join("")}</div>
       <div class="cs-grid">
         <div><span class="r-k mono">${u.cChallenge}</span><p>${esc(t.ch)}</p></div>
