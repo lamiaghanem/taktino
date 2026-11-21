@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"TAKTINO","slogan":"Every move, measured.","description":"Performance marketing and creative growth agency turning business problems into measurable growth opportunities.","areaServed":["Egypt","Middle East"],"knowsLanguage":["en","ar"],"serviceType":["Marketing Strategy","Brand Naming","Brand Identity","Rebranding","Performance Marketing","Media Buying","Creative Strategy","Photography and Video Production","Social Media Marketing","Influencer Marketing","Website Design and Development","E-commerce Development","SEO","Conversion Rate Optimization","Email and WhatsApp Marketing","Marketing Audits"]}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"TAKTINO","slogan":"Every move, measured.","description":"Performance marketing and creative growth agency turning business problems into measurable growth opportunities.","areaServed":["Egypt","Middle East"],"knowsLanguage":["en","ar"],"email":"taktinoagency@gmail.com","telephone":"+201009590602","serviceType":["Marketing Strategy","Brand Naming","Brand Identity","Rebranding","Performance Marketing","Media Buying","Creative Strategy","Photography and Video Production","Social Media Marketing","Influencer Marketing","Website Design and Development","E-commerce Development","SEO","Conversion Rate Optimization","Email and WhatsApp Marketing","Marketing Audits"]}
 </script>
 <style>
 :root{
@@ -728,6 +728,7 @@ footer{padding-block:44px;border-top:1px solid var(--line)}
       <div>
         <div class="direct">
           <div class="d-row"><span class="mono">WhatsApp</span><a href="#" class="v js-wa" id="waText" data-cta="contact_row"></a></div>
+          <div class="d-row"><span class="mono" data-i18n="d.phone">Phone</span><a href="tel:+201009590602" class="v" dir="ltr">+20 100 959 0602</a></div>
           <div class="d-row"><span class="mono" data-i18n="d.email">Email</span><a href="#" class="v" id="mailText"></a></div>
           <div class="d-row"><span class="mono" data-i18n="d.loc">Based in</span><span class="v" data-i18n="d.locv">Egypt — working across the Middle East</span></div>
           <div class="d-row"><span class="mono" data-i18n="d.social">Social</span><span class="v"><span class="ph" data-i18n="d.socialv">[Add Instagram / LinkedIn links]</span></span></div>
@@ -773,9 +774,9 @@ footer{padding-block:44px;border-top:1px solid var(--line)}
    Anything still containing "X" or "example" is treated as unset.
    ============================================================ */
 const CONFIG = Object.assign({
-  whatsapp: "20XXXXXXXXXX",            // [PLACEHOLDER] digits only, international format, e.g. 2010xxxxxxxx
-  whatsappDisplay: "+20 XX XXXX XXXX", // [PLACEHOLDER] how the number is shown
-  email: "hello@taktino.example",      // [PLACEHOLDER] official domain inbox, e.g. hello@taktino.com
+  whatsapp: "201006602409",            // WhatsApp, digits only, international format
+  whatsappDisplay: "+20 100 660 2409", // how the WhatsApp number is shown
+  email: "taktinoagency@gmail.com",    // contact inbox
   formEndpoint: "",                    // [OPTIONAL] Formspree / Basin / own API URL that accepts JSON POST. Empty = form opens WhatsApp.
   ga4Id: "",                           // [OPTIONAL] e.g. G-XXXXXXX — loads only after consent
   metaPixelId: ""                      // [OPTIONAL] Meta Pixel ID — loads only after consent
@@ -1000,7 +1001,7 @@ const AR = {
   "ct.idx":"تواصل","ct.title":"الرقعة جاهزة. <em>الدور عليك.</em>","ct.lede":"أخبرنا عن عملك، وسنعود إليك بالطريقة التي سنتعامل بها معه — بدءًا بالتشخيص.",
   "f.name":"اسمك *","f.co":"الشركة / العلامة التجارية *","f.web":"الموقع أو حساب إنستجرام","f.ch":"التحدي الرئيسي في عملك *","f.contact":"رقم واتساب أو البريد الإلكتروني *","f.contactHint":"لنتمكن من الرد عليك.","f.msg":"هل هناك ما يجب أن نعرفه؟ (اختياري)",
   "f.submit":"اطلب التشخيص","f.mail":"أو أرسل عبر البريد",
-  "d.email":"البريد الإلكتروني","d.loc":"مقرّنا","d.locv":"مصر — ونعمل في أنحاء الشرق الأوسط","d.social":"التواصل الاجتماعي","d.socialv":"[أضف روابط إنستجرام / لينكدإن]",
+  "d.phone":"الهاتف","d.email":"البريد الإلكتروني","d.loc":"مقرّنا","d.locv":"مصر — ونعمل في أنحاء الشرق الأوسط","d.social":"التواصل الاجتماعي","d.socialv":"[أضف روابط إنستجرام / لينكدإن]",
   "wa.t":"تفضّل الحديث مباشرةً؟","wa.s":"افتح محادثة واتساب مع فريقنا.","fab":"تحدث معنا على واتساب",
   "consent.t":"نستخدم ملفات تعريف الارتباط التحليلية لفهم طريقة استخدام الموقع. يمكنك القبول أو الرفض.","consent.y":"قبول","consent.n":"رفض"
 };
