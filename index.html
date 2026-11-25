@@ -473,12 +473,12 @@ footer{padding-block:44px;border-top:1px solid var(--line)}
 .cs-gal figure:hover img{transform:scale(1.04);filter:saturate(1.05)}
 .cs-cap{color:var(--muted);margin:-10px 0 0}
 .cs-gal:not(:has(figure))+.cs-cap{display:none}
-.cs-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.cs-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
 .cs-stats div{background:var(--bg);padding:22px 20px;display:flex;flex-direction:column;gap:8px}
 .cs-stats b{font-family:var(--display);font-weight:600;font-size:clamp(30px,3.6vw,50px);letter-spacing:-.04em;line-height:1;color:var(--lime);direction:ltr;text-align:start}
 .cs-stats span{color:var(--ink);font-size:14.5px;line-height:1.45}
 .cs-src{color:var(--muted);margin:-8px 0 0;font-size:11px}
-@media (max-width:900px){.cs-stats{grid-template-columns:repeat(2,1fr)}.cs-stats b{font-size:28px}.cs-gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}}
+@media (max-width:900px){.cs-stats{grid-template-columns:1fr}.cs-stats b{font-size:28px}.cs-gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}}
 @media (prefers-reduced-motion:reduce){.ticker-t{animation:none}}
 
 /* TAKTINO MOVE articles */
@@ -941,17 +941,17 @@ const CASES = [
   {url:"", piece:"queen",
    imgs:[["jh-01","w","A model wearing Jasmine House gold rings and earrings","عارضة ترتدي خواتم وأقراط جاسمين هاوس الذهبية"],["jh-02","t","Editorial portrait in a garden, wearing a gold necklace and rings","بورتريه في حديقة بقلادة وخواتم ذهبية"],["jh-03","","Spiral gold ring on a turquoise stage — Modern Masterpiece","خاتم ذهبي حلزوني على منصة فيروزية"],["jh-05","","The Dana pearl earrings","أقراط دانة باللؤلؤ"],["jh-04","t","Gold bracelets and necklace in natural light","أساور وقلادة ذهبية في ضوء طبيعي"],["jh-06","t","Close-up portrait with gold rings","بورتريه قريب بخواتم ذهبية"],["jh-07","t","The zodiac collection laid out in a circle","مجموعة الأبراج مرتّبة في دائرة"],["jh-08","t","Portrait in a white shirt with layered gold pieces","بورتريه بقميص أبيض وقطع ذهبية متعددة"]],
    en:{name:"Jasmine House Jewelry", sector:"Fine-jewelry e-commerce · UAE", scope:["Naming","Market selection","Brand identity","E-commerce","Art direction & photography","Video","Content, contests & social"],
-       stats:[["26K+","visitors in the store's first year online"],["4","markets with real demand — UAE, KSA, Iraq, Egypt"],["AED 2.9K","average order value"],["3","countries the pieces reached — UAE, Egypt, Oman"]],
-       src:"Google Analytics & store records · Jun 2023 – Jun 2024",
+       stats:[["26K+","visitors in the store's first year online"],["12","countries the pieces reached, including the UAE, Egypt, Oman, Kuwait, Qatar, the US and Germany"],["AED 2.9K","average order value"]],
+       src:"Google Analytics (Jun 2023 – Jun 2024) & store records",
        ch:"A name, an idea — and a category where nobody buys gold from a stranger. The job: make a brand-new jewelry house feel trusted enough to sell 21K gold online, across borders.",
        mv:["Named the brand and chose the battlefield: the UAE first","Built the identity — mark, palette, type and visual language","Designed and launched a bilingual e-commerce store","Art-directed every shoot: concept, casting, styling, photography and video","Ran the content engine — collections, contests and stories, from zodiac pieces to culture-inspired lines"],
-       out:"From a name on paper to a live jewelry house: 26K+ people found it within a year, orders arrived from three countries, and the average basket landed near AED 2,900."},
+       out:"From a name on paper to a live jewelry house: 26K+ visitors found it within a year, its pieces reached 12 countries, and the average basket landed near AED 2,900."},
    ar:{name:"جاسمين هاوس للمجوهرات", sector:"متجر إلكتروني للمجوهرات الفاخرة · الإمارات", scope:["اختيار الاسم","اختيار السوق","الهوية البصرية","المتجر الإلكتروني","الإخراج الفني والتصوير","الفيديو","المحتوى والمسابقات والسوشيال"],
-       stats:[["+26K","زائر للمتجر في سنته الأولى أونلاين"],["4","أسواق بطلب حقيقي — الإمارات والسعودية والعراق ومصر"],["2.9K AED","متوسط قيمة الطلب"],["3","دول وصلتها القطع — الإمارات ومصر وعُمان"]],
-       src:"Google Analytics وسجلات المتجر · يونيو 2023 – يونيو 2024",
+       stats:[["+26K","زائر للمتجر في سنته الأولى أونلاين"],["12","دولة وصلتها قطعنا، منها الإمارات ومصر وعُمان والكويت وقطر وأمريكا وألمانيا"],["2.9K AED","متوسط قيمة الطلب"]],
+       src:"Google Analytics (يونيو 2023 – يونيو 2024) وسجلات المتجر",
        ch:"اسم وفكرة — في فئة لا يشتري فيها أحد الذهب من غريب. المهمة: أن تبدو دار مجوهرات جديدة تمامًا جديرة بالثقة لتبيع ذهب عيار 21 أونلاين، وعبر الحدود.",
        mv:["اختيار اسم العلامة وأرض المعركة: الإمارات أولًا","بناء الهوية — الشعار والألوان والخطوط واللغة البصرية","تصميم متجر إلكتروني بلغتين وإطلاقه","الإخراج الفني لكل جلسة تصوير: الفكرة واختيار الموديل والتنسيق والتصوير والفيديو","إدارة ماكينة المحتوى — المجموعات والمسابقات والقصص، من قطع الأبراج إلى المجموعات المستوحاة من الحضارات"],
-       out:"من اسم على الورق إلى دار مجوهرات قائمة: أكثر من 26 ألف شخص وصلوا إليها خلال عام، ووصلت الطلبات من ثلاث دول، واستقر متوسط قيمة الطلب قرب 2,900 درهم."}},
+       out:"من اسم على الورق إلى دار مجوهرات قائمة: أكثر من 26 ألف زائر وصلوا إليها خلال عام، ووصلت قطعها إلى 12 دولة، واستقر متوسط قيمة الطلب قرب 2,900 درهم."}},
   {url:"https://www.wafaalhosany-lawfirm.com", piece:"bishop",
    en:{name:"Wafa Ali Alhosany Advocates & Legal Consultants", sector:"Law firm · Dubai, UAE", scope:["Rebranding","Website","LinkedIn","X","Facebook","Content strategy"],
        ch:"A law firm in a field built on trust needed a brand and a digital presence that matched the seriousness of its work — and spoke clearly to individuals and businesses in the UAE.",
