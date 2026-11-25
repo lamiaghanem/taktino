@@ -315,7 +315,7 @@ h2 em{color:var(--lime)}
 
 /* insights */
 .ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.ins{background:var(--bg);padding:clamp(24px,3vw,38px);display:flex;flex-direction:column;gap:20px;min-height:360px;transition:background .4s}
+.ins{background:var(--bg);padding:clamp(24px,3vw,38px);display:flex;flex-direction:column;gap:18px;min-height:340px;transition:background .4s}
 .ins:hover{background:var(--bg-3)}
 .ins-top{display:flex;justify-content:space-between;color:var(--muted)}
 .ins-top b{color:var(--lime);font-weight:500}
@@ -480,6 +480,40 @@ footer{padding-block:44px;border-top:1px solid var(--line)}
 .cs-src{color:var(--muted);margin:-8px 0 0;font-size:11px}
 @media (max-width:900px){.cs-stats{grid-template-columns:repeat(2,1fr)}.cs-stats b{font-size:28px}.cs-gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}}
 @media (prefers-reduced-motion:reduce){.ticker-t{animation:none}}
+
+/* TAKTINO MOVE articles */
+.ins-grid.two{grid-template-columns:repeat(2,1fr)}
+.ins-dek{color:var(--muted);margin:0;font-size:15.5px;line-height:1.6}
+.ins-read{margin-top:auto;align-self:flex-start;background:none;border:0;border-top:1px solid var(--line);color:var(--lime);padding:14px 0 0;width:100%;text-align:start;cursor:pointer;display:flex;justify-content:space-between}
+.ins-read:hover{color:var(--ink)}
+.mv-dlg{border:0;padding:0;background:transparent;max-width:min(760px,94vw);width:100%;max-height:92vh;color:var(--ink);overflow:auto;overscroll-behavior:contain}
+.mv-dlg::backdrop{background:rgba(5,8,18,.78);backdrop-filter:blur(6px)}
+.mv-wrap{background:var(--bg-2);border:1px solid var(--line-2);border-radius:10px;padding:clamp(26px,5vw,56px);position:relative}
+.mv-close{position:absolute;top:14px;inset-inline-end:14px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line-2);background:var(--bg);color:var(--ink);font-size:22px;cursor:pointer;line-height:1}
+.mv-close:hover{border-color:var(--lime);color:var(--lime)}
+#moveBody .mv-k{color:var(--muted);margin:0 0 14px}
+#moveBody .mv-k b{color:var(--lime);font-weight:500}
+#moveBody h2{font-size:clamp(30px,4.4vw,50px);line-height:1.05;margin:0 0 16px}
+[dir="rtl"] #moveBody h2{line-height:1.35}
+#moveBody .mv-dek{font-size:clamp(18px,2vw,21px);color:var(--ink);border-inline-start:2px solid var(--lime);padding-inline-start:16px;margin:0 0 30px}
+#moveBody h3{font-size:22px;letter-spacing:-.02em;margin:30px 0 10px;font-weight:600}
+#moveBody p,#moveBody li{color:#C9CCD6;font-size:16.5px;line-height:1.75}
+#moveBody ol{padding-inline-start:22px;display:grid;gap:10px}
+#moveBody li::marker{color:var(--lime);font-family:var(--mono)}
+#moveBody .mv-end{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.6vw,28px);color:var(--lime);line-height:1.3;margin:36px 0 26px}
+[dir="rtl"] #moveBody .mv-end{font-family:var(--display);font-style:normal;font-weight:600}
+/* founder */
+.founder{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:clamp(28px,5vw,64px);align-items:center;margin-top:clamp(60px,8vw,110px);border:1px solid var(--line-2);border-radius:8px;padding:clamp(22px,3.6vw,44px);background:var(--bg-2)}
+.fd-ph{position:relative;aspect-ratio:4/5;border-radius:6px;overflow:hidden;background:linear-gradient(160deg,#141a2e,#0B1020);border:1px solid var(--line-2);display:grid;place-items:center}
+.fd-mono{font-family:var(--serif);font-style:italic;font-size:clamp(90px,12vw,150px);color:var(--lime);letter-spacing:-.04em;direction:ltr}
+.fd-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fd-k{color:var(--lime);margin:0 0 10px}
+.fd-n{font-size:clamp(34px,4.6vw,60px);margin:0 0 10px}
+.fd-r{color:var(--muted);margin:0 0 22px}
+.fd-tx>p:not(.mono){font-size:16.5px;line-height:1.7;margin:0 0 14px;color:#C9CCD6}
+.fd-tx .fd-q{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.4vw,28px);color:var(--ink);margin:22px 0 0;line-height:1.3}
+[dir="rtl"] .fd-tx .fd-q{font-family:var(--display);font-style:normal;font-weight:600}
+@media (max-width:760px){.founder{grid-template-columns:1fr}.fd-ph{max-width:260px}.ins-grid.two{grid-template-columns:1fr}}
 /* print / PDF export: show everything, no blank pages */
 @media print{
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -716,10 +750,10 @@ footer{padding-block:44px;border-top:1px solid var(--line)}
       <p class="sec-idx mono"><b>06</b> / <span data-i18n="ins.idx">Our thinking</span></p>
       <div>
         <h2 id="ins-title" class="rv">TAKTINO <em>MOVE.</em></h2>
-        <p class="lede rv d1" data-i18n="ins.lede">A series that breaks down real marketing decisions — the brilliant ones and the costly ones — and what any business can learn from them.</p>
+        <p class="lede rv d1" data-i18n="ins.lede">Short, sharp breakdowns of real marketing decisions — what the dashboard hides, how buyers really decide, and the move any business can make this week.</p>
       </div>
     </div>
-    <div class="ins-grid" id="insGrid"></div>
+    <div class="ins-grid two" id="insGrid"></div>
   </div>
 </section>
 
@@ -734,6 +768,16 @@ footer{padding-block:44px;border-top:1px solid var(--line)}
       </div>
     </div>
     <div class="why-grid" id="whyGrid"></div>
+    <div class="founder rv">
+      <div class="fd-ph"><span class="fd-mono" aria-hidden="true">LG</span><img src="founder.webp" alt="Lamia Ghanem, founder and CEO of TAKTINO" data-i18n-aria="fd.alt" loading="lazy" onerror="this.remove()"></div>
+      <div class="fd-tx">
+        <p class="mono fd-k" data-i18n="fd.k">The founder</p>
+        <h3 class="fd-n" data-i18n="fd.n">Lamia Ghanem</h3>
+        <p class="fd-r mono" data-i18n="fd.r">Founder &amp; CEO · 10+ years in marketing</p>
+        <p data-i18n="fd.p1">For more than ten years, Lamia has built brands and the marketing that moves them. She founded TAKTINO on one conviction: every marketing move should earn its place — and be measured.</p>
+        <p data-i18n="fd.p2">She works hands-on. From naming Jasmine House and choosing its market, to art-directing every shoot, casting and contest behind it; from rebranding a Dubai law firm to running its full presence on LinkedIn, X and Facebook. At TAKTINO, every client gets that same founder-level attention.</p>
+      </div>
+    </div>
     <p class="manifesto rv" data-i18n="manifesto">Every move, <span>measured.</span></p>
   </div>
 </section>
@@ -894,7 +938,7 @@ const SERVICES = [
 ];
 
 const CASES = [
-  {url:"https://www.jasminehousejewelry.com", piece:"queen",
+  {url:"", piece:"queen",
    imgs:[["jh-01","w","A model wearing Jasmine House gold rings and earrings","عارضة ترتدي خواتم وأقراط جاسمين هاوس الذهبية"],["jh-02","t","Editorial portrait in a garden, wearing a gold necklace and rings","بورتريه في حديقة بقلادة وخواتم ذهبية"],["jh-03","","Spiral gold ring on a turquoise stage — Modern Masterpiece","خاتم ذهبي حلزوني على منصة فيروزية"],["jh-05","","The Dana pearl earrings","أقراط دانة باللؤلؤ"],["jh-04","t","Gold bracelets and necklace in natural light","أساور وقلادة ذهبية في ضوء طبيعي"],["jh-06","t","Close-up portrait with gold rings","بورتريه قريب بخواتم ذهبية"],["jh-07","t","The zodiac collection laid out in a circle","مجموعة الأبراج مرتّبة في دائرة"],["jh-08","t","Portrait in a white shirt with layered gold pieces","بورتريه بقميص أبيض وقطع ذهبية متعددة"]],
    en:{name:"Jasmine House Jewelry", sector:"Fine-jewelry e-commerce · UAE", scope:["Naming","Market selection","Brand identity","E-commerce","Art direction & photography","Video","Content, contests & social"],
        stats:[["26K+","people found the store in its first year online"],["4","markets with real demand — UAE, KSA, Iraq, Egypt"],["AED 2.9K","average order value"],["3","countries the pieces reached — UAE, Egypt, Oman"]],
@@ -941,11 +985,7 @@ const AUDIT = {
       ["العرض واقتصاديات العميل",["كم يكلّف العميل مقارنةً بقيمته؟","أي المنتجات تتحمّل الإنفاق الإعلاني؟"]]]
 };
 
-const INSIGHTS = [
-  {cat:{en:"Performance",ar:"الأداء"}, hits:[0,5,10,15], en:"The metric that lies: why return on ad spend alone can mislead your budget.", ar:"المؤشر الذي يكذب: لماذا قد يضلّل العائد على الإنفاق الإعلاني وحده ميزانيتك؟"},
-  {cat:{en:"Conversion",ar:"التحويل"}, hits:[3,6,9,12], en:"Checkmate at checkout: finding the friction that kills conversions.", ar:"كش ملك عند الدفع: كيف تجد العوائق التي تقتل التحويل؟"},
-  {cat:{en:"Media",ar:"الوسائط"}, hits:[1,8,11,14], en:"Playing the season: plan your media before the board gets crowded.", ar:"العب الموسم: خطّط لإعلاناتك قبل أن تزدحم الرقعة."}
-];
+const INSIGHTS = [{"n":"01","hits":[0,5,10,15],"cat":{"en":"Measurement","ar":"القياس"},"en":{"t":"The sale your dashboard never saw","d":"In Egypt, the most valuable customers often leave no trace in your ad account. Trust only the dashboard, and you will cut the ads that work and feed the ones that don't.","b":[["h","The dashboard tells a story. It is not the truth."],["p","Open any ad account and you will see a clean line: this ad, this click, this sale. It feels scientific. But in our market, the real journey looks different. Someone sees your ad on Tuesday. They screenshot it. They send it to a friend. On Thursday they search your name, open Instagram, and message you on WhatsApp. The sale closes in a chat, the payment is cash on delivery, and no pixel ever fires."],["p","Your dashboard records that as nothing. Or worse, it credits the last thing they touched, usually a branded search or a retargeting ad that simply stood near the door."],["h","Two mistakes that follow"],["p","First, you cut the campaign that created the demand, because the dashboard says it did not convert. Second, you scale the campaign that harvests demand someone else created, because it looks cheap. Cheap and caused are not the same thing. A harvesting ad has a great number and no new customers behind it."],["h","The move: ask what would have happened without the ad"],["p","Top growth teams stopped asking “who clicked” and started asking “who would not have bought if we had stayed silent.” That is called incrementality, and you do not need expensive software to start."],["ol",["Switch one city or one audience off for two weeks. Keep a similar one on. Compare total orders, not ad-reported orders. The gap is what your ads really caused.","Give every channel its own door: a different WhatsApp greeting, a different promo code, a different landing link. When a customer says the code, you have captured a sale the pixel missed.","Add one question to every chat and every checkout: “How did you first hear about us?” Read the answers weekly. They will contradict your dashboard, and they are usually right.","Judge the business with one blended number: total revenue divided by total ad spend. Platforms argue about credit. The bank account does not."]],["h","The chess lens"],["p","Amateurs judge a move by the piece it captures. Strong players judge it by the position it creates. A click is a capture. A customer who exists because of your brand, and would not exist without it, is position."],["h","What to do this week"],["p","Pick your biggest campaign. Write down what the dashboard says it earned. Then run the holdout test and the “how did you hear” question for 14 days. If the two numbers are far apart, you have just found the most profitable decision of your quarter."],["end","Every move, measured. Including the ones your dashboard cannot see."]]},"ar":{"t":"البيعة اللي الداشبورد ماشافهاش","d":"في مصر، أغلى العملاء كتير مابيسيبوش أي أثر في حساب الإعلانات. لو صدّقتوا الداشبورد بس، هتوقفوا الإعلانات اللي شغالة وتكبّروا اللي مش شغالة.","b":[["h","الداشبورد بيحكي حكاية، مش الحقيقة"],["p","افتحوا أي حساب إعلانات هتلاقوا خط نضيف: الإعلان ده، الكليك ده، البيعة دي. شكله علمي. لكن الرحلة الحقيقية في سوقنا مختلفة. العميل يشوف إعلانكم يوم الثلاثاء، ياخد سكرين شوت، يبعته لصاحبه، ويوم الخميس يدوّر على اسمكم ويدخل إنستجرام ويكلمكم واتساب. البيعة بتتقفل في الشات، والدفع كاش عند الاستلام، ومفيش بيكسل اتحرك."],["p","الداشبورد بيسجل ده كأنه ولا حاجة. أو أسوأ: بيدّي الفضل لآخر حاجة العميل لمسها، غالبًا بحث باسم البراند أو إعلان ريتارجتنج كان واقف جنب الباب وخلاص."],["h","غلطتين بيحصلوا بعد كده"],["p","الأولى: توقفوا الحملة اللي صنعت الطلب، لأن الداشبورد بيقول إنها ماحققتش. التانية: تكبّروا الحملة اللي بتحصد طلب حد تاني صنعه، لأن رقمها شكله رخيص. الرخيص مش هو اللي عمل البيعة. الإعلان اللي بيحصد رقمه حلو، ومفيش وراه عملاء جداد."],["h","النقلة: اسألوا «إيه اللي كان هيحصل من غير الإعلان؟»"],["p","أقوى فرق النمو في العالم بطّلت تسأل «مين داس» وبقت تسأل «مين ماكانش هيشتري لو سكتنا». ده اسمه Incrementality، ومش محتاج برامج غالية عشان تبدأوا."],["ol",["اقفلوا الإعلانات في مدينة أو شريحة جمهور واحدة لمدة أسبوعين، وسيبوا واحدة شبهها شغالة. قارنوا إجمالي الطلبات الحقيقية، مش اللي الإعلان بيقول عليها. الفرق ده هو اللي إعلاناتكم عملته فعلًا.","ادّوا كل قناة بابها الخاص: رسالة ترحيب واتساب مختلفة، كود خصم مختلف، لينك مختلف. لما العميل يقول الكود، تبقوا مسكتوا بيعة البيكسل فاتته.","ضيفوا سؤال واحد في كل شات وكل أوردر: «عرفتونا منين أول مرة؟». اقروا الإجابات كل أسبوع. هتناقض الداشبورد، وغالبًا هي اللي صح.","احكموا على البيزنس برقم واحد مجمّع: إجمالي الإيرادات ÷ إجمالي الإنفاق الإعلاني. المنصات بتتخانق على الفضل، الحساب البنكي لأ."]],["h","بعين الشطرنج"],["p","الهاوي بيحكم على النقلة بالقطعة اللي أكلها. اللاعب القوي بيحكم عليها بالوضع اللي عملته. الكليك قطعة اتاكلت. العميل اللي موجود بسبب البراند ومكانش هيوجد من غيره، ده هو الوضع."],["h","اعملوا إيه الأسبوع ده"],["p","اختاروا أكبر حملة عندكم. اكتبوا الداشبورد بيقول إنها كسبت كام. بعدها اعملوا اختبار الإيقاف وسؤال «عرفتونا منين» لمدة 14 يوم. لو الرقمين بعيد عن بعض، تبقوا لقيتوا أربح قرار في الربع ده."],["end","كل نقلة محسوبة. حتى اللي الداشبورد مش شايفها."]]}},{"n":"02","hits":[3,6,9,12],"cat":{"en":"Psychology & creative","ar":"علم النفس والإبداع"},"en":{"t":"Sell the sentence, not the product","d":"Your customer is not only deciding whether to buy. They are deciding what they will say when someone asks, “Why did you buy that?”","b":[["h","The hidden second buyer"],["p","Every purchase has two audiences. The first is the person with the card. The second is everyone they will have to explain it to: a partner, a boss, a mother, a group chat, or their own inner critic at 2 a.m."],["p","Most ads speak only to the first audience. They list features and promise results. The strongest ads quietly hand the buyer a sentence for the second audience — a line they can repeat without feeling foolish."],["h","Why this works"],["p","Behavioral researchers have long described how people prefer choices they can justify to others. A purchase is a small act of reputation. If the reason is hard to say out loud, the buyer waits, compares, or disappears. Not because your offer is weak — because it is hard to defend."],["h","Three kinds of sentences"],["ol",["The numbers sentence — for example: “We paid 30% less per lead after the first month.” A finance manager can repeat this to a board.","The safe-choice sentence: “They showed us the problem before they sold us anything.” A nervous owner can repeat this to a partner.","The identity sentence: “We work with people who think before they spend.” It tells the buyer who they become by choosing you."]],["h","The test"],["p","Take your homepage headline. Ask five past or possible clients: “If you hired us, what would you tell your boss or partner in one sentence?” Write down their exact words, not your polished version. If they cannot answer, your message is not finished. If their words are better than yours, steal them. They are your headline."],["h","How to build it into the work"],["ol",["Name the second buyer in every proposal. Who has to approve this? Who will doubt it?","End every pitch and report with one line the client can forward. Short, specific, true.","Remove the objection before it is spoken. Show the risk, the cost and the exit plan up front. Confidence is not hiding the doubt. It is naming it first."]],["h","The chess lens"],["p","You do not win by attacking the king. You win by removing the defenders. In sales, the defenders are the questions your client fears being asked. Answer those, and the decision makes itself."],["end","Don't sell the product. Sell the sentence they will say after they say yes."]]},"ar":{"t":"بيعوا الجملة، مش المنتج","d":"عميلكم مش بس بيقرر يشتري ولا لأ. هو بيقرر هيقول إيه لما حد يسأله: «اشتريت ده ليه؟»","b":[["h","المشتري التاني الخفي"],["p","أي عملية شراء ليها جمهورين. الأول صاحب الكارت. التاني كل الناس اللي هيضطر يشرحلهم: الشريك، المدير، الأم، جروب الواتساب، أو صوته الداخلي الساعة 2 بالليل."],["p","أغلب الإعلانات بتكلم الجمهور الأول بس: بتعدّد المميزات وتوعد بنتايج. أقوى الإعلانات بتدّي المشتري بهدوء جملة للجمهور التاني — سطر يقدر يكرره من غير ما يحس إنه غلط."],["h","ليه ده بيشتغل"],["p","علماء السلوك بيوصفوا من زمان إن الناس بتفضّل الاختيارات اللي تقدر تبررها قدام غيرها. الشراء عمل صغير بيمس السمعة. لو السبب صعب يتقال بصوت عالي، المشتري بيأجّل أو يقارن أو يختفي. مش عشان عرضكم ضعيف — عشان صعب الدفاع عنه."],["h","تلات أنواع من الجمل"],["ol",["جملة الأرقام — مثلًا: «دفعنا 30% أقل في كل ليد بعد أول شهر». مدير مالي يقدر يقولها قدام مجلس إدارة.","جملة الاختيار الآمن: «ورّونا المشكلة قبل ما يبيعولنا أي حاجة». صاحب بيزنس قلقان يقدر يقولها لشريكه.","جملة الهوية: «بنشتغل مع ناس بتفكر قبل ما تصرف». بتقول للمشتري هيبقى مين لما يختاركم."]],["h","الاختبار"],["p","خدوا عنوان صفحتكم الرئيسية. اسألوا خمسة عملاء حاليين أو محتملين: «لو اشتغلتوا معانا، هتقولوا لمديركم أو شريككم إيه في جملة واحدة؟». اكتبوا كلامهم بالحرف، مش نسختكم المتظبّطة. لو ماعرفوش يجاوبوا، رسالتكم لسه ماخلصتش. لو كلامهم أحلى من كلامكم، خدوه. ده عنوانكم."],["h","إزاي تحطوها في الشغل"],["ol",["سمّوا المشتري التاني في كل عرض: مين لازم يوافق؟ مين هيشك؟","اختموا كل عرض وتقرير بسطر واحد العميل يقدر يبعته لغيره. قصير، محدد، حقيقي.","شيلوا الاعتراض قبل ما يتقال. اعرضوا المخاطرة والتكلفة وخطة الخروج من الأول. الثقة مش إنكم تخبّوا الشك — الثقة إنكم تسمّوه قبل غيركم."]],["h","بعين الشطرنج"],["p","مش بتكسبوا بإنكم تهاجموا الملك. بتكسبوا بإنكم تشيلوا المدافعين. في البيع، المدافعين هما الأسئلة اللي عميلكم خايف يتسألها. جاوبوها، والقرار هياخد نفسه."],["end","ماتبيعوش المنتج. بيعوا الجملة اللي هيقولها بعد ما يقول أيوه."]]}}];
 
 const WHY = {
   en:[["Diagnosis before spend","No budget moves until we understand the problem it is meant to solve."],
@@ -978,7 +1018,7 @@ const UI = {
       msgHi:"Hello TAKTINO — I'd like a business diagnosis.", mName:"Name", mCo:"Company / brand", mWeb:"Website / Instagram", mCh:"Main challenge", mContact:"Contact", mMore:"Details",
       waDefault:"Hello TAKTINO, I'd like to talk about growing my business.", waChal:"Hello TAKTINO — our main challenge is: ", waChal2:". I'd like to discuss a professional audit.",
       subject:"Diagnosis request from the TAKTINO website", emailPh:"[Add official email]", waPh:"[Add WhatsApp number]",
-      cLabel:"Client project", cGal:"Selected frames · concept, casting, shoot & design by TAKTINO", cSrc:"Source", ticker:["Brand strategy","Naming & identity","Meta ads","Google Ads","TikTok & Snapchat ads","Content & social media","Photography & video","UGC & creators","Websites","E-commerce stores","SEO","Analytics & tracking","Email & WhatsApp marketing","Conversion optimisation"], cChallenge:"The challenge", cMoves:"Our moves", cOutcome:"The outcome", cVisit:"Visit the website", clientTitle:"Verified case studies — in preparation", clientBody:"We publish client work only with written approval. Each case study will show the business problem, the move we made and the measured result — nothing more, nothing less.",
+      cLabel:"Client project", readMove:"Read the move", moveCta:"Talk to us about your next move", cGal:"Selected frames · concept, casting, shoot & design by TAKTINO", cSrc:"Source", ticker:["Brand strategy","Naming & identity","Meta ads","Google Ads","TikTok & Snapchat ads","Content & social media","Photography & video","UGC & creators","Websites","E-commerce stores","SEO","Analytics & tracking","Email & WhatsApp marketing","Conversion optimisation"], cChallenge:"The challenge", cMoves:"Our moves", cOutcome:"The outcome", cVisit:"Visit the website", clientTitle:"Verified case studies — in preparation", clientBody:"We publish client work only with written approval. Each case study will show the business problem, the move we made and the measured result — nothing more, nothing less.",
       template:"Case study template", tProblem:"The problem", tMove:"The move", tResult:"The measured result", phProblem:"[Business problem]", phMove:"[Strategic decision]", phResult:"[Verified result — published with client approval]", phClient:"[Client name]", phInd:"[Industry]",
       demoNote:"Demonstration projects use fictional brands to show how we think. They are not client work, and no results are claimed.",
       demoLabel:"Demonstration · fictional", dScenario:"Scenario", dMoves:"Moves we'd make", dResults:"Results", dNA:"None claimed — this demonstrates method, not performance.",
@@ -1000,7 +1040,7 @@ const UI = {
       msgHi:"مرحبًا تاكتينو — أرغب في تشخيص لعملي.", mName:"الاسم", mCo:"الشركة / العلامة", mWeb:"الموقع / إنستجرام", mCh:"التحدي الرئيسي", mContact:"وسيلة التواصل", mMore:"تفاصيل",
       waDefault:"مرحبًا تاكتينو، أود التحدث عن تنمية عملي.", waChal:"مرحبًا تاكتينو — التحدي الرئيسي لدينا: ", waChal2:". أود مناقشة تدقيق احترافي.",
       subject:"طلب تشخيص من موقع تاكتينو", emailPh:"[أضف البريد الرسمي]", waPh:"[أضف رقم واتساب]",
-      cLabel:"مشروع عميل", cGal:"لقطات مختارة · الفكرة واختيار الموديل والتصوير والتصميم من TAKTINO", cSrc:"المصدر", ticker:["استراتيجية العلامة","الاسم والهوية","إعلانات ميتا","إعلانات جوجل","إعلانات تيك توك وسناب شات","المحتوى والسوشيال ميديا","التصوير والفيديو","محتوى صنّاع المحتوى UGC","المواقع الإلكترونية","المتاجر الإلكترونية","SEO","التحليلات والتتبّع","التسويق بالبريد وواتساب","تحسين معدل التحويل"], cChallenge:"التحدي", cMoves:"نقلاتنا", cOutcome:"النتيجة", cVisit:"زيارة الموقع", clientTitle:"دراسات حالة موثّقة — قيد الإعداد", clientBody:"لا ننشر أعمال العملاء إلا بموافقة مكتوبة. ستعرض كل دراسة حالة مشكلة العمل، والنقلة التي اتخذناها، والنتيجة المقاسة — لا أكثر ولا أقل.",
+      cLabel:"مشروع عميل", readMove:"اقرأ النقلة", moveCta:"كلّمنا عن نقلتك الجاية", cGal:"لقطات مختارة · الفكرة واختيار الموديل والتصوير والتصميم من TAKTINO", cSrc:"المصدر", ticker:["استراتيجية العلامة","الاسم والهوية","إعلانات ميتا","إعلانات جوجل","إعلانات تيك توك وسناب شات","المحتوى والسوشيال ميديا","التصوير والفيديو","محتوى صنّاع المحتوى UGC","المواقع الإلكترونية","المتاجر الإلكترونية","SEO","التحليلات والتتبّع","التسويق بالبريد وواتساب","تحسين معدل التحويل"], cChallenge:"التحدي", cMoves:"نقلاتنا", cOutcome:"النتيجة", cVisit:"زيارة الموقع", clientTitle:"دراسات حالة موثّقة — قيد الإعداد", clientBody:"لا ننشر أعمال العملاء إلا بموافقة مكتوبة. ستعرض كل دراسة حالة مشكلة العمل، والنقلة التي اتخذناها، والنتيجة المقاسة — لا أكثر ولا أقل.",
       template:"نموذج دراسة الحالة", tProblem:"المشكلة", tMove:"النقلة", tResult:"النتيجة المقاسة", phProblem:"[مشكلة العمل]", phMove:"[القرار الاستراتيجي]", phResult:"[نتيجة موثّقة — تُنشر بموافقة العميل]", phClient:"[اسم العميل]", phInd:"[القطاع]",
       demoNote:"مشاريع العرض تستخدم علامات خيالية لتوضيح طريقة تفكيرنا. ليست أعمالًا لعملاء، ولا ندّعي فيها أي نتائج.",
       demoLabel:"مشروع عرض · خيالي", dScenario:"السيناريو", dMoves:"النقلات التي سنتخذها", dResults:"النتائج", dNA:"لا ندّعي أي نتائج — المشروع يوضح المنهج لا الأداء.",
@@ -1040,8 +1080,8 @@ const AR = {
   "band.l":"<span>لا ننشر لنملأ الصفحة. <em>نلعب لنكسب.</em></span><span>لا نخمّن. <em>نقيس.</em></span><span>لا نطارد المشاهدات. <em>نكسب الأرض.</em></span>","band.aria":"بيان TAKTINO","svc.idx":"الخدمات","svc.title":"ست قطع. <em>استراتيجية واحدة.</em>","svc.lede":"من اختيار الاسم حتى الطلب رقم ألف — الاستراتيجية والإعلانات والإبداع والسوشيال ميديا والمواقع والبيانات، يلعبها فريق واحد كلعبة واحدة. افتح أي قطعة لترى ما تحصل عليه بالضبط.",
   "proof.idx":"الأدلة","proof.title":"أدلة، <em>لا وعود.</em>","proof.lede":"علامات حقيقية، ونقلات حقيقية، وأرقام حقيقية — كل رقم بمصدره. ثم أمثلة توضّح طريقة تفكيرنا، وكل عنصر موصوف بما هو عليه بالضبط.","proof.aria":"أنواع الأدلة",
   "proof.t1":"مشاريع العملاء","proof.k1":"عملاء حقيقيون","proof.t2":"مشاريع عرض","proof.k2":"توضيحية","proof.t3":"نموذج تدقيق","proof.k3":"إطار عمل",
-  "ins.idx":"رؤيتنا","ins.lede":"سلسلة تحلل قرارات تسويقية حقيقية — اللامعة منها والمكلفة — وما يمكن لأي نشاط تجاري أن يتعلمه منها.",
-  "why.idx":"لماذا تاكتينو","why.title":"لماذا تاكتينو، <em>وليس وكالة أكبر؟</em>","why.lede":"سؤال مشروع، وهذه إجابتنا الصريحة.",
+  "ins.idx":"رؤيتنا","ins.lede":"تحليلات قصيرة وحادة لقرارات تسويقية حقيقية — ما يخفيه الداشبورد، وكيف يقرر المشتري فعلًا، والنقلة التي يقدر أي بيزنس ياخدها الأسبوع ده.","mv.close":"إغلاق",
+  "fd.k":"المؤسِّسة","fd.n":"لمياء غانم","fd.r":"المؤسِّسة والرئيسة التنفيذية · أكثر من 10 سنوات في التسويق","fd.p1":"منذ أكثر من عشر سنوات، تبني لمياء العلامات التجارية والتسويق الذي يحرّكها. أسست TAKTINO على قناعة واحدة: كل نقلة تسويقية يجب أن تستحق مكانها — وأن تُقاس.","fd.p2":"تعمل بنفسها على التفاصيل: من اختيار اسم جاسمين هاوس وسوقها، إلى الإخراج الفني لكل جلسة تصوير واختيار الموديلز والمسابقات؛ ومن إعادة بناء علامة مكتب محاماة في دبي إلى إدارة حضوره الكامل على لينكدإن وإكس وفيسبوك. وفي TAKTINO، يحصل كل عميل على نفس الاهتمام من المؤسِّسة مباشرة.","fd.alt":"لمياء غانم، المؤسِّسة والرئيسة التنفيذية لـ TAKTINO","why.idx":"لماذا تاكتينو","why.title":"لماذا تاكتينو، <em>وليس وكالة أكبر؟</em>","why.lede":"سؤال مشروع، وهذه إجابتنا الصريحة.",
   "manifesto":"كل نقلة، <span>محسوبة.</span>",
   "ct.idx":"تواصل","ct.title":"الرقعة جاهزة. <em>الدور عليك.</em>","ct.lede":"أخبرنا عن عملك، وسنعود إليك بالطريقة التي سنتعامل بها معه — بدءًا بالتشخيص.",
   "f.name":"اسمك *","f.co":"الشركة / العلامة التجارية *","f.web":"الموقع أو حساب إنستجرام","f.ch":"التحدي الرئيسي في عملك *","f.contact":"رقم واتساب أو البريد الإلكتروني *","f.contactHint":"لنتمكن من الرد عليك.","f.msg":"هل هناك ما يجب أن نعرفه؟ (اختياري)",
@@ -1133,7 +1173,7 @@ function renderProof(){
         <div><span class="r-k mono">${u.cMoves}</span><ul>${t.mv.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
         <div class="cs-out"><span class="r-k mono">${u.cOutcome}</span><p>${esc(t.out)}</p></div>
       </div>
-      <a class="btn btn-ghost btn-sm cs-link" href="${c.url}" target="_blank" rel="noopener">${u.cVisit} <span aria-hidden="true">↗</span></a>
+      ${c.url?`<a class="btn btn-ghost btn-sm cs-link" href="${c.url}" target="_blank" rel="noopener">${u.cVisit} <span aria-hidden="true">↗</span></a>`:""}
     </article>`;}).join("")}</div>`;
   $("#p-demo").innerHTML = `<p class="panel-note"><b>${u.demoLabel}</b><span>${u.demoNote}</span></p><div class="cards">${DEMOS.map(d=>{const t=d[lang]; return `
     <article class="card"><span class="label">${u.demoLabel}</span><h3 dir="ltr" style="text-align:start">${d.code}</h3><p class="sub">${esc(t.sub)}</p>
@@ -1148,11 +1188,25 @@ function renderProof(){
 }
 function renderInsights(){
   const u = U();
-  $("#insGrid").innerHTML = INSIGHTS.map((a,i)=>`
-    <article class="ins"><div class="ins-top mono"><span><b>MOVE #0${i+1}</b></span><span>${a.cat[lang]}</span></div>
+  $("#insGrid").innerHTML = INSIGHTS.map((a,i)=>{const t=a[lang]; return `
+    <article class="ins"><div class="ins-top mono"><span><b>MOVE #${a.n}</b></span><span>${esc(a.cat[lang])}</span></div>
       <div class="ins-board" aria-hidden="true">${Array.from({length:16},(_,k)=>`<i class="${a.hits.includes(k)?"hit":""}"></i>`).join("")}</div>
-      <h3>${esc(a[lang])}</h3><div class="soon mono"><span>${u.draft}</span><span>${u.soon}</span></div></article>`).join("");
+      <h3>${esc(t.t)}</h3><p class="ins-dek">${esc(t.d)}</p>
+      <button class="ins-read mono" type="button" data-move="${i}">${u.readMove} <span aria-hidden="true">→</span></button></article>`;}).join("");
 }
+function openMove(i){
+  const a = INSIGHTS[i], t = a[lang], d = $("#moveDlg");
+  $("#moveBody").innerHTML = `<p class="mono mv-k"><b>TAKTINO MOVE #${a.n}</b> · ${esc(a.cat[lang])}</p><h2 id="moveTitle">${esc(t.t)}</h2><p class="mv-dek">${esc(t.d)}</p>` +
+    t.b.map(b=> b[0]==="h" ? `<h3>${esc(b[1])}</h3>` : b[0]==="ol" ? `<ol>${b[1].map(x=>`<li>${esc(x)}</li>`).join("")}</ol>` : b[0]==="end" ? `<p class="mv-end">${esc(b[1])}</p>` : `<p>${esc(b[1])}</p>`).join("") +
+    `<a href="#contact" class="btn btn-lime js-cta mv-cta" data-cta="move_${a.n}">${U().moveCta} <span class="arr" aria-hidden="true">→</span></a>`;
+  if(d.showModal) d.showModal(); else d.setAttribute("open","");
+  d.scrollTop = 0;
+}
+document.addEventListener("click", e=>{
+  const b = e.target.closest(".ins-read"); if(b){ openMove(+b.dataset.move); return; }
+  const d = $("#moveDlg"); if(!d || !d.open) return;
+  if(e.target.closest(".mv-close") || e.target === d || e.target.closest(".mv-cta")) d.close();
+});
 function renderWhy(){
   $("#whyGrid").innerHTML = WHY[lang].map((w,i)=>`<div class="why"><span class="mono">0${i+1}</span><h3>${esc(w[0])}</h3><p>${esc(w[1])}</p></div>`).join("");
 }
@@ -1387,5 +1441,8 @@ try{ startLang = localStorage.getItem("taktino-lang") || ((navigator.language||"
 setLang(startLang,false);
 requestAnimationFrame(()=>document.body.classList.add("loaded"));
 </script>
+<dialog class="mv-dlg" id="moveDlg" aria-labelledby="moveTitle">
+  <div class="mv-wrap"><button class="mv-close" type="button" aria-label="Close" data-i18n-aria="mv.close">×</button><article id="moveBody"></article></div>
+</dialog>
 </body>
 </html>
