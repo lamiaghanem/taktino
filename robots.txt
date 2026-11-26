@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lamiaghanem.github.io/taktino/sitemap.xml
